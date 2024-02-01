@@ -7,6 +7,16 @@ $pipWrapperPath = Join-Path -Path $profileDir -ChildPath "pip-wrapper.ps1"
 # Set the alias for pip
 Set-Alias -Name pip -Value $pipWrapperPath
 
-function dotfiles {
+function dgit {
     & git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME @args
+}
+
+
+
+
+function cht {
+    param(
+        [string]$argument
+    )
+    curl "https://cheat.sh/$argument"
 }
